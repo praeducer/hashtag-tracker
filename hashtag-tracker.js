@@ -7,13 +7,10 @@
 
 
 var Twitter = require('twitter');
+var fs = require('fs');
 
-var client = new Twitter({
-  consumer_key: '',
-  consumer_secret: '',
-  access_token_key: '',
-  access_token_secret: ''
-});
+var secret = JSON.parse(fs.readFileSync('secret.json', 'utf8'));
+var client = new Twitter(secret);
 
 client.stream('statuses/filter', {track: '#javascript'}, function(stream) {
   stream.on('data', function(tweet) {
