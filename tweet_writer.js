@@ -1,3 +1,9 @@
+/*
+	Writes Tweets to a collection on a local mongoDB server.
+
+	@author: Paul Prae
+	@since: 05/14/2015
+*/
 
 function Tweet_Writer() {
 
